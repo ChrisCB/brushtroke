@@ -1,0 +1,18 @@
+.box {
+	padding: 1px;
+	width: 300px;
+	display:block;
+	}
+
+$r: 3;
+$s: .1;
+
+@for $i from 1 through 100 {
+	$sNew : $r * $s * (1-$s);
+	.box:nth-child(#{$i}) {
+		background-color: darken(grey, $sNew);
+	}
+	$s : $sNew;
+}
+	
+	
